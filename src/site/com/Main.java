@@ -7,24 +7,25 @@ import java.util.List;
 public class Main {
 	public static void main(String[] args) {
 		
+		Comment comment = new Comment("Ryan", "My New Comment" );
+	    Comment newcomment = new Comment("Bob", "My Comment" );
+	    
+		Post newPost = new Post("MY NEW POST", "blabla", "John");
+		Post post = new Post("NEW POST",  "My New Post", "Vlada");
+		Post newPost1 = new Post("MY NEW POST", "blabla", "John");
+		Post post2 = new Post("NEW POST",  "My New Post", "Vlada");
+		Post newPost3 = new Post("MY NEW POST", "blabla", "John");
+		Post post4 = new Post("NEW POST",  "My New Post", "Vlada");
+		Post newPost5 = new Post("MY NEW POST", "blabla", "John");
+		Post post6 = new Post("NEW POST",  "My New Post", "Vlada");
+		Post newPost7 = new Post("MY NEW POST", "blabla", "John");
+		Post post8 = new Post("NEW POST",  "My New Post", "Vlada");
+		Post newPost9 = new Post("MY NEW POST", "blabla", "John");
+		Post post10 = new Post("NEW POST",  "My New Post", "Vlada");
+		Post newPost11 = new Post("MY NEW POST", "blabla", "John");
+		Post post12 = new Post("NEW POST",  "My New Post", "Vlada");
 		
-		Post newPost = new Post("MY NEW POST", "blabla", "John", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post post = new Post("NEW POST",  "My New Post", "Vlada", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post newPost1 = new Post("MY NEW POST", "blabla", "John", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post post2 = new Post("NEW POST",  "My New Post", "Vlada", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post newPost3 = new Post("MY NEW POST", "blabla", "John", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post post4 = new Post("NEW POST",  "My New Post", "Vlada", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post newPost5 = new Post("MY NEW POST", "blabla", "John", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post post6 = new Post("NEW POST",  "My New Post", "Vlada", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post newPost7 = new Post("MY NEW POST", "blabla", "John", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post post8 = new Post("NEW POST",  "My New Post", "Vlada", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post newPost9 = new Post("MY NEW POST", "blabla", "John", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post post10 = new Post("NEW POST",  "My New Post", "Vlada", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post newPost11 = new Post("MY NEW POST", "blabla", "John", LocalDateTime.parse("2020-08-03T10:15:30"));
-		Post post12 = new Post("NEW POST",  "My New Post", "Vlada", LocalDateTime.parse("2020-08-03T10:15:30"));
-		
-	    Comment comment = new Comment("Ryan", "My New Comment", LocalDateTime.parse("2020-08-03T10:15:30"));
-	    Comment newcomment = new Comment("Bob", "My Comment", LocalDateTime.parse("2020-05-03T11:35:25"));
+	    
 		List<Comment> commentsList = new ArrayList<Comment>();
 		commentsList.add(comment);
 		commentsList.add(newcomment);
@@ -34,8 +35,8 @@ public class Main {
 		newcomment.expressingTypeSystem(ExpressingType.DISLIKE);
 		
 		
-		comment.getDateTime();
-		System.out.println(commentsList.toString());
+		//comment.getDateTime();
+		//System.out.println(commentsList.toString());
 		
 		Site site = new Site();
 		List<Post> postList = new ArrayList<Post>();
@@ -53,13 +54,19 @@ public class Main {
 		postList.add(post10);
 		postList.add(newPost11);
 		
-		//System.out.println(post.getComments());
 		
-		List<Post> myLastPosts = postList.subList(postList.size()-10, postList.size());
-		// System.out.println(myLastPosts);
+		post.setComments(commentsList);
+		post.getTopComment();
+		
+		site.setPosts(postList);
+		site.myLastPosts();
+		
+		
 		
 		
 		//System.out.println(postList.toString());
 
 	}
+	
+	
 }

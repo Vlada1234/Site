@@ -7,15 +7,14 @@ public class Comment {
 	private String userName;
 	private int numberOfLikes;
 	private int numberOfDislikes;
-	private int topComment = 0;
 	private String text;
 	private LocalDateTime dateTime;
 
-	public Comment(String userName, String text, LocalDateTime datetime) {
+	public Comment(String userName, String text) {
 		super();
 		this.text = text;
 		this.userName = userName;
-		this.dateTime = datetime;
+		this.dateTime = LocalDateTime.now();
 		this.numberOfLikes = 0;
 		this.numberOfDislikes = 0;
 	}
