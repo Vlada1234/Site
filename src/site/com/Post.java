@@ -9,7 +9,6 @@ public class Post {
 	private String userName;
 	private LocalDateTime uploadDateTime;
 	private List<Comment> comments = new ArrayList<>();
-	private Comment topComment;
 	private String title;
 
 	
@@ -18,7 +17,6 @@ public class Post {
 		this.uploadDateTime = LocalDateTime.now();
 		this.title = title;
 		this.text = text;
-		this.comments = comments;
 		this.userName = userName;
 	}
 
@@ -68,10 +66,11 @@ public class Post {
 	}
 
 	public Comment getTopComment() {
+		Comment topComment = new Comment(userName, text);
+		if (comments.size() > 0) {
+			topComment = comments.get(0);
+		}
 		for (int i = 0; i < comments.size(); i++) {
-			if (comments.size() > 0) {
-				topComment = comments.get(0);
-			}
 			if (comments.get(i).getNumberOfLikes() > topComment.getNumberOfLikes()) {
 				topComment = comments.get(i);
 			}

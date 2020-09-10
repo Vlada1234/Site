@@ -58,8 +58,8 @@ public class Main {
 		post.setComments(commentsList);
 		post.getTopComment();
 		
-		site.setPosts(postList);
-		site.myLastPosts();
+		//site.setPosts(postList);
+		//site.myLastPosts();
 		
 		
 		
